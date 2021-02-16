@@ -18,10 +18,6 @@ php bin/magento setup:di:compile
 ```
 
 ```bash
-php bin/magento setup:di:compile
-```
-
-```bash
 php bin/magento c:c
 ```
 
