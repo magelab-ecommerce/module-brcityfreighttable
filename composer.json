@@ -2,11 +2,20 @@
   "name": "magelab-ecommerce/module-brcityfreighttable",
   "description": "Magelab Magento 2 Module for Br City Freight Table",
   "type": "magento2-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": "~7.1.3||~7.2.0||~7.3.0"
+  },
   "authors": [
     {
-      "name": "BRCityFreightTable",
-      "email": "phgdl.19@gmail.com"
+      "name": "Pedro Lima",
+      "email": "phgdl.19@gmail.com",
+      "homepage": "https://www.linkedin.com/in/pedrohgdl/",
+      "role": "Developer"
     }
   ],
   "autoload": {
@@ -16,5 +25,7 @@
     "psr-4": {
       "Magelab\\BRCityFreightTable\\": ""
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
