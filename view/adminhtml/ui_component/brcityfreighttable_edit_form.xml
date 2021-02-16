@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">brcityfreighttable_freight_form.brcityfreighttable_freight_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Freight</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+
+    <settings>
+        <buttons>
+            <button name="delete" class="Magelab\BRCityFreightTable\Block\Adminhtml\Freight\Edit\Buttons\Delete"/>
+            <button name="reset" class="Magelab\BRCityFreightTable\Block\Adminhtml\Freight\Edit\Buttons\Reset"/>
+            <button name="save" class="Magelab\BRCityFreightTable\Block\Adminhtml\Freight\Edit\Buttons\Save"/>
+            <button name="back">
+                <url path="*/*/" />
+                <class>back</class>
+                <label translate="true">Back</label>
+            </button>
+        </buttons>
+        <namespace>brcityfreighttable_freight_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>brcityfreighttable_edit_form.brcityfreighttable_freight_form_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="brcityfreighttable_freight_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="brcityfreighttable/index/save" />
+        </settings>
+        <dataProvider class="Magelab\BRCityFreightTable\Model\Freight\DataProvider" name="brcityfreighttable_freight_form_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <fieldset name="general" sortOrder="10">
+        <settings>
+            <collapsible>true</collapsible>
+            <opened>true</opened>
+            <label translate="true">Rate</label>
+        </settings>
+
+        <field name="entity_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">entity_id</item>
+                    <item name="dataScope" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="city">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">City</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">city</item>
+                    <item name="dataScope" xsi:type="string">city</item>
+                    <item name="notice" xsi:type="string" translate="true">Ex: Londrina</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="uf">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">UF</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">uf</item>
+                    <item name="dataScope" xsi:type="string">uf</item>
+                    <item name="notice" xsi:type="string" translate="true">Ex: PR</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Title</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">title</item>
+                    <item name="dataScope" xsi:type="string">title</item>
+                </item>
+            </argument>
+        </field>
+        <field name="value">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Value</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">value</item>
+                    <item name="dataScope" xsi:type="string">value</item>
+                    <item name="notice" xsi:type="string" translate="true">Ex: 5.00</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="estimative">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Estimative</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="source" xsi:type="string">estimative</item>
+                    <item name="dataScope" xsi:type="string">estimative</item>
+                    <item name="notice" xsi:type="string" translate="true">Ex: 5 business days</item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_enabled">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="label" xsi:type="string" translate="true">Is Enabled</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="source" xsi:type="string">is_enabled</item>
+                    <item name="sortOrder" xsi:type="number">1</item>
+                    <item name="dataScope" xsi:type="string">is_enabled</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">1</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+</form>

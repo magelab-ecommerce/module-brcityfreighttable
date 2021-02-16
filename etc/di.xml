@@ -1,0 +1,30 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+	<!-- Freight Grid Listing -->
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="brcityfreighttable_freight_listing_data_source" xsi:type="string">Magelab\BRCityFreightTable\Model\ResourceModel\Freight\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<virtualType name="Magelab\BRCityFreightTable\Model\ResourceModel\Freight\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">magelab_brcityfreighttable</argument>
+			<argument name="resourceModel" xsi:type="string">Magelab\BRCityFreightTable\Model\ResourceModel\Freight</argument>
+		</arguments>
+	</virtualType>
+
+	<!-- Edit -->
+	<virtualType name="FreightGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Magelab\BRCityFreightTable\Model\Resource\Freight\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">FreightGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+	<!-- Service contract -->
+	<preference for="Magelab\BRCityFreightTable\Api\FreightRepositoryInterface" type="Magelab\BRCityFreightTable\Model\FreightRepository" />
+	<preference for="Magelab\BRCityFreightTable\Api\Data\FreightInterface" type="Magelab\BRCityFreightTable\Model\Freight" />
+
+</config>

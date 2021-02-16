@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Magelab_BRCityFreightTable::module"
+			 title="Magelab"
+			 module="Magelab_BRCityFreightTable"
+			 sortOrder="30"
+			 resource="Magelab_BRCityFreightTable::module"/>
+
+		<add id="Magelab_BRCityFreightTable::freight"
+			 title="Manage Freight Table"
+			 module="Magelab_BRCityFreightTable"
+			 sortOrder="1"
+			 parent="Magelab_BRCityFreightTable::module"
+			 action="brcityfreighttable/index"
+			 resource="Magelab_BRCityFreightTable::freight"/>
+
+<!--		<add id="Magelab_BRCityFreightTable::configuration"-->
+<!--             title="Configuration"-->
+<!--			 translate="title"-->
+<!--             module="Magelab_BRCityFreightTable"-->
+<!--             parent="Magelab_BRCityFreightTable::module"-->
+<!--             sortOrder="20"-->
+<!--			 dependsOnModule="Magelab_BRCityFreightTable"-->
+<!--             action="adminhtml/system_config/edit/section/mcLandingPages"-->
+<!--             resource="Magelab_BRCityFreightTable::configuration" />-->
+	</menu>
+</config>
